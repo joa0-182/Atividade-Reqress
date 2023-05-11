@@ -11,35 +11,15 @@ export const routes: Routes = [
     pathMatch: 'full',
   },
   {
-    path: 'create-cliente',
-    loadComponent: () => import('./create-cliente/create-cliente.page').then( m => m.CreateClientePage)
-  },
-  {
-    path: 'alterar-cliente/:id',
-    loadComponent: () => import('./alterar-cliente/alterar-cliente.page').then( m => m.AlterarClientePage)
-  },
-  {
-    path: 'lista-clientes',
-    loadComponent: () => import('./lista-clientes/lista-clientes.page').then( m => m.ListaClientesPage)
-  },
-  {
-    path: 'lista-produtos',
-    loadComponent: () => import('./lista-produtos/lista-produtos.page').then( m => m.ListaProdutosPage)
-  },
-  {
-    path: 'create-produto',
-    loadComponent: () => import('./create-produto/create-produto.page').then( m => m.CreateProdutoPage)
-  },
-  {
-    path: 'alterar-produto/:id',
-    loadComponent: () => import('./alterar-produto/alterar-produto.page').then( m => m.AlterarProdutoPage)
-  },
-  {
     path: 'lista-usuarios',
     loadComponent: () => import('./lista-usuarios/lista-usuarios.page').then( m => m.ListaUsuariosPage)
   },
   {
     path: 'criar-usuario',
     loadComponent: () => import('./criar-usuario/criar-usuario.page').then( m => m.CriarUsuarioPage)
+  },
+  {
+    path: 'alterar-usuario',
+    loadComponent: () => import('./alterar-usuario/alterar-usuario.page').then( m => m.AlterarUsuarioPage)
   }
 ];

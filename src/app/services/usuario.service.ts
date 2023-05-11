@@ -11,7 +11,7 @@ export class UsuarioService {
 
   url = '/api/users?page'
 
-  constructor(private HttpClient: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   create(usuario: Usuario): Observable<Usuario>{
     return this.http.post<Usuario>(this.url,usuario).pipe(
