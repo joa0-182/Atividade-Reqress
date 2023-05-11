@@ -1,0 +1,26 @@
+<ion-header [translucent]="true" class="ion-padding">
+  <ion-toolbar>
+    <ion-title>Cadastro de Usuario</ion-title>
+    <ion-button slot="end" routerLink="/lista-usuarios">Voltar</ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <br>
+  <ion-input type="name" fill="outline" label="Nome" labelPlacement="floating" helperText="Digite o nome do usuario"
+    errorText="Nome de usuario invalido" [(ngModel)]="primeiro_nome">
+  </ion-input>
+  <br>
+  <ion-input type="name" fill="outline" label="Sobrenome" labelPlacement="floating" helperText="Sobrenome do usuario"
+    errorText="Sobrenome Invalido" [(ngModel)]="sobrenome">
+  </ion-input>
+  <br>
+  <ion-input type="email" fill="outline" label="Email" labelPlacement="floating" helperText="Coloque um email válido"
+    errorText="Email invalido" [(ngModel)]="email">
+  </ion-input>
+  <br>
+  <ion-input type="text" fill="outline" label="Imagem do Usuario" labelPlacement="floating" helperText="Coloque um link de imagem para o usuario"
+    errorText="Link invalido" [(ngModel)]="usuario_imagem">
+  </ion-input>
+  <ion-button (click)="salvar()" expand="block" >Salvar</ion-button>
+</ion-content>

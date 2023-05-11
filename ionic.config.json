@@ -1,0 +1,7 @@
+{
+  "name": "atividade-reqress",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,25 @@
+<ion-header [translucent]="true" class="ion-padding">
+  <ion-toolbar>
+    <ion-title>Lista de Usuarios</ion-title>
+    <ion-button slot="end" routerLink="/home">Voltar</ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <br>
+  <ion-item *ngFor="let usuario of listaUsuarios">
+    <ion-label>
+      <img src="{{usuario.usuario_imagem}}" alt="Foto do usuario">
+      <h1>{{usuario.id}}</h1>
+      <h1>{{usuario.primeiro_nome}}</h1>
+      <p>{{usuario.sobrenome}}</p>
+      <h2>{{usuario.email}}</h2>
+    </ion-label>
+    <ion-button color="warning" (click)="alterarUsuario(usuario.id!)">
+      <ion-icon slot="icon-only" name="create-outline"></ion-icon>
+    </ion-button>
+    <ion-button color="danger" (click)="confirmarExclusao(usuario.id!)">
+      <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+    </ion-button>
+  </ion-item>
+</ion-content>
