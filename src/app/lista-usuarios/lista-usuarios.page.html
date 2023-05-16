@@ -11,8 +11,7 @@
     <ion-label>
       <img src="{{usuario.usuario_imagem}}" alt="Foto do usuario">
       <h1>{{usuario.id}}</h1>
-      <h1>{{usuario.primeiro_nome}}</h1>
-      <p>{{usuario.sobrenome}}</p>
+      <h1>{{usuario.primeiro_nome}} - {{usuario.sobrenome}}</h1>
       <h2>{{usuario.email}}</h2>
     </ion-label>
     <ion-button color="warning" (click)="alterarUsuario(usuario.id!)">

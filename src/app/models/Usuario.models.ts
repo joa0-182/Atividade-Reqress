@@ -1,6 +1,6 @@
 export class Usuario
 {
-  id?: number;
+  id: number | undefined;
   primeiro_nome: string | undefined;
   sobrenome: string | undefined;
   email: string | undefined;

@@ -6,7 +6,6 @@ import { Router, RouterLink } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import { Usuario } from '../models/Usuario.models';
 import { UsuarioService } from '../services/usuario.service';
-
 @Component({
   selector: 'app-lista-usuarios',
   templateUrl: './lista-usuarios.page.html',
@@ -14,21 +13,20 @@ import { UsuarioService } from '../services/usuario.service';
   standalone: true,
   imports: [IonicModule, CommonModule, FormsModule, RouterLink]
 })
-
-export class ListaUsuariosPage implements OnInit {
+export class ListaUsuariosPage {
 
   listaUsuarios: Usuario[] = [];
   searchTerm: string = '';
   usuario: any;
 
-  constructor(private: usuarioService: UsuarioService, private router: Router, private alertController: AlertController) { }
+  constructor(private usuarioService: UsuarioService, private router: Router, private alertController: AlertController) { }
 
   ionViewWillEnter() {
     this.buscarUsuarios();
   }
 
   buscarUsuarios(){
-    this.usuarioService.getAll().subscribe(dados => {
+    this.usuarioService.getAllUsers().subscribe(dados => {
       this.listaUsuarios = dados;
     });
   }
@@ -46,7 +44,7 @@ export class ListaUsuariosPage implements OnInit {
   async confirmarExclusao(id: number) {
     const alert = await this.alertController.create({
       header: 'Confirmar exclusão',
-      message: 'Tem certeza que deseja excluir esse usuario?',
+      message: 'Tem certeza que deseja excluir esse usuario.?',
       buttons: [
         {
           text: 'Cancelar',
