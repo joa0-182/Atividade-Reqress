@@ -30,10 +30,10 @@ export class AlterarUsuarioPage implements OnInit {
   ngOnInit() {
     this.id = this.activatedRoute.snapshot.params['id'];
 
-    this.usuarioService.getOne(this.id).subscribe(retorno => {
+    this.usuarioService.getUser(this.id).subscribe(retorno => {
       this.primeiro_nome = retorno.primeiro_nome as string;
       this.sobrenome = retorno.sobrenome ? retorno.sobrenome : '';
-      this.email = retorno.email ? retorno.email : 0;
+      this.email = retorno.email ? retorno.email : '';
       this.usuario_imagem = retorno.usuario_imagem ? retorno.usuario_imagem : '';
     })
   }

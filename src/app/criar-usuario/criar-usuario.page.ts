@@ -15,6 +15,7 @@ import { Router, RouterLink } from '@angular/router';
 })
 export class CriarUsuarioPage implements OnInit {
 
+  id = 0;
   primeiro_nome = '';
   sobrenome = '';
   email = '';
@@ -27,14 +28,16 @@ export class CriarUsuarioPage implements OnInit {
 
   salvar(){
     const usuario: Usuario = {
+       id: this.id,
        primeiro_nome: this.primeiro_nome,
        sobrenome: this.sobrenome,
        email: this.email,
        usuario_imagem: this.usuario_imagem
     };
+
     this.usuarioService.create(usuario).subscribe((dados) => {
-      window.alert(`Concluido com exito!\nId Produto: ${dados.id}\nProduto inserido: ${dados.primeiro_nome}`);
-      this.route.navigateByUrl('/lista-produtos')
+      window.alert(`Concluido com exito!\nId Usuario: ${dados.id}\nUsuario inserido: ${dados.primeiro_nome}`);
+      this.route.navigateByUrl('/lista-usuarios')
     });
  }
 
