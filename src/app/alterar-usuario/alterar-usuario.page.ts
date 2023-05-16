@@ -19,7 +19,7 @@ export class AlterarUsuarioPage implements OnInit {
   first_name = '';
   last_name = '';
   email = '';
-  usuario_imagem = '';
+  avatar = '';
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -34,23 +34,22 @@ export class AlterarUsuarioPage implements OnInit {
       this.first_name = retorno.first_name as string;
       this.last_name = retorno.last_name ? retorno.last_name : '';
       this.email = retorno.email ? retorno.email : '';
-      this.usuario_imagem = retorno.usuario_imagem ? retorno.usuario_imagem : '';
+      this.avatar = retorno.avatar ? retorno.avatar : '';
     })
   }
 
-  salvar(){
+  salvar() {
     const usuario: Usuario = {
       id: this.id,
       first_name: this.first_name,
       last_name: this.last_name,
       email: this.email,
-      usuario_imagem: this.usuario_imagem
-   };
-   this.usuarioService.update(usuario).subscribe((dados) =>
-   {
-     window.alert(`Concluido com exito!\nUsuario alterado: ${dados.id} -> ${dados.first_name}`);
-     this.router.navigateByUrl('/lista-usuarios')
-   });
+      avatar: this.avatar
+    };
+    this.usuarioService.update(usuario).subscribe((dados) => {
+      window.alert(`Concluido com exito!\nUsuario alterado: ${dados.id} -> ${dados.first_name}`);
+      this.router.navigateByUrl('/lista-usuarios')
+    });
   }
 
 }

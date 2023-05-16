@@ -19,26 +19,26 @@ export class CriarUsuarioPage implements OnInit {
   first_name = '';
   last_name = '';
   email = '';
-  usuario_imagem = '';
+  avatar = '';
 
-  constructor(private usuarioService: UsuarioService, private route:Router) { }
+  constructor(private usuarioService: UsuarioService, private route: Router) { }
 
   ngOnInit() {
   }
 
-  salvar(){
+  salvar() {
     const usuario: Usuario = {
-       id: this.id,
-       first_name: this.first_name,
-       last_name: this.last_name,
-       email: this.email,
-       usuario_imagem: this.usuario_imagem
+      id: this.id,
+      first_name: this.first_name,
+      last_name: this.last_name,
+      email: this.email,
+      avatar: this.avatar
     };
 
     this.usuarioService.create(usuario).subscribe((dados) => {
       window.alert(`Concluido com exito!\nId Usuario: ${dados.id}\nUsuario inserido: ${dados.first_name}`);
       this.route.navigateByUrl('/lista-usuarios')
     });
- }
+  }
 
 }

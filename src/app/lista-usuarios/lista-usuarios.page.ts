@@ -44,7 +44,7 @@ export class ListaUsuariosPage {
   async confirmarExclusao(id: number) {
     const alert = await this.alertController.create({
       header: 'Confirmar exclusão',
-      message: 'Tem certeza que deseja excluir esse usuario.?',
+      message: 'Tem certeza que deseja excluir este usuario?',
       buttons: [
         {
           text: 'Cancelar',
