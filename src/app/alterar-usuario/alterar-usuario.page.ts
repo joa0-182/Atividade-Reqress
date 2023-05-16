@@ -16,8 +16,8 @@ import { UsuarioService } from '../services/usuario.service';
 export class AlterarUsuarioPage implements OnInit {
 
   id = 0;
-  primeiro_nome = '';
-  sobrenome = '';
+  first_name = '';
+  last_name = '';
   email = '';
   usuario_imagem = '';
 
@@ -31,8 +31,8 @@ export class AlterarUsuarioPage implements OnInit {
     this.id = this.activatedRoute.snapshot.params['id'];
 
     this.usuarioService.getUser(this.id).subscribe(retorno => {
-      this.primeiro_nome = retorno.primeiro_nome as string;
-      this.sobrenome = retorno.sobrenome ? retorno.sobrenome : '';
+      this.first_name = retorno.first_name as string;
+      this.last_name = retorno.last_name ? retorno.last_name : '';
       this.email = retorno.email ? retorno.email : '';
       this.usuario_imagem = retorno.usuario_imagem ? retorno.usuario_imagem : '';
     })
@@ -41,14 +41,14 @@ export class AlterarUsuarioPage implements OnInit {
   salvar(){
     const usuario: Usuario = {
       id: this.id,
-      primeiro_nome: this.primeiro_nome,
-      sobrenome: this.sobrenome,
+      first_name: this.first_name,
+      last_name: this.last_name,
       email: this.email,
       usuario_imagem: this.usuario_imagem
    };
    this.usuarioService.update(usuario).subscribe((dados) =>
    {
-     window.alert(`Concluido com exito!\nUsuario alterado: ${dados.id} -> ${dados.primeiro_nome}`);
+     window.alert(`Concluido com exito!\nUsuario alterado: ${dados.id} -> ${dados.first_name}`);
      this.router.navigateByUrl('/lista-usuarios')
    });
   }

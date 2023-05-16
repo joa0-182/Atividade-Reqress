@@ -6,17 +6,18 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" class="ion-padding">
+  <h1>Resultado:</h1>
   <br>
   <ion-item *ngFor="let usuario of listaUsuarios">
     <ion-label>
       <img src="{{usuario.usuario_imagem}}" alt="Foto do usuario">
       <h1>{{usuario.id}}</h1>
-      <h1>{{usuario.primeiro_nome}} - {{usuario.sobrenome}}</h1>
+      <h1>{{usuario.first_name}} {{usuario.last_name}}</h1>
       <h2>{{usuario.email}}</h2>
     </ion-label>
-    <ion-button color="warning" (click)="alterarUsuario(usuario.id!)">
+    <!-- <ion-button color="warning" (click)="alterarUsuario(usuario.id!)" routerLink="/alterar-usuario">
       <ion-icon slot="icon-only" name="create-outline"></ion-icon>
-    </ion-button>
+    </ion-button> -->
     <ion-button color="danger" (click)="confirmarExclusao(usuario.id!)">
       <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
     </ion-button>
